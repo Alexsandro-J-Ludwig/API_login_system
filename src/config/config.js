@@ -8,15 +8,15 @@ const client = new Client({
   port: Number(process.env.PG_PORT),
   user: process.env.PG_USER,
   password: process.env.PG_PASS,
-  database: process.env.PG_DB,
+  database: process.env.PG_DAaTA,
 });
 
 async function connection() {
   try {
     await client.connect();
-    console.log(`${process.env.DB} conectado!`);
+    console.log(`${process.env.PG_DATA} conectado!`);
   } catch (err) {
-    console.log(`Não foi possível conectar ao ${process.env.DB}:`, err);
+    console.log(`Não foi possível conectar ao ${process.env.PG_DATA}:`, err);
   }
 }
 
