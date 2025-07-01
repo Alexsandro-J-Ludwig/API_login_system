@@ -1,4 +1,5 @@
 import authService from "../service/authService.js";
+import gerarToken from "../service/authService.js"
 
 async function logar(req, res) {
     try {
@@ -10,7 +11,11 @@ async function logar(req, res) {
 
         if(!user) return res.status(400).json({ msg: "Não foi possível localizar usuario!" });
 
-        return res.status(200).json({ msg: "Usuario logado com sucesso!" });
+        const token = gerarToken(user.id)
+
+        console.log(token)
+
+        return res.send({token});
 
     } catch (error) {
         return res.status(500).json({ msg: error.message });

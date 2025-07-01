@@ -22,7 +22,7 @@ async function login(username, password) {
       return null;
     }
   
-    return user;
+    return user.id, user.username, user.password;
   }
 
 export default login;

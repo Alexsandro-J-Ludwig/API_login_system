@@ -8,7 +8,7 @@ const client = new Client({
   port: Number(process.env.PG_PORT),
   user: process.env.PG_USER,
   password: process.env.PG_PASS,
-  database: process.env.PG_DAaTA,
+  database: process.env.PG_DATA,
 });
 
 async function connection() {
