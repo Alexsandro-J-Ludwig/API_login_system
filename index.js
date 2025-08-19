@@ -15,7 +15,7 @@ async function inicializar() {
 
 inicializar();  
 
-const port = 3000;
+const port = 3001;
 
 const app = express();
 
