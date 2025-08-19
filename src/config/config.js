@@ -4,11 +4,11 @@ dotenv.config();
 import { Client } from 'pg';
 
 const client = new Client({
-  host: process.env.PG_HOST,
-  port: Number(process.env.PG_PORT),
-  user: process.env.PG_USER,
-  password: process.env.PG_PASS,
-  database: process.env.PG_DATA,
+  host: process.env.PGHOST,
+  port: Number(process.env.PGPORT),
+  user: process.env.PGUSER,
+  password: process.env.PGPASS,
+  database: process.env.PGDATA,
 });
 
 async function connection() {
