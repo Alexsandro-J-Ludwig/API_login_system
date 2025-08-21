@@ -14,9 +14,9 @@ const client = new Client({
 async function connection() {
   try {
     await client.connect();
-    console.log(`${process.env.PG_DATA} conectado!`);
+    console.log(`${process.env.PGDATA} conectado!`);
   } catch (err) {
-    console.log(`Não foi possível conectar ao ${process.env.PG_DATA}:`, err);
+    console.log(`Não foi possível conectar ao ${process.env.PGDATA}:`, err);
   }
 }
 
