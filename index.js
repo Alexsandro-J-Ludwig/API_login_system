@@ -3,22 +3,26 @@ dotenv.config();
 
 import express from "express";
 import { connection } from './src/config/config.js';
-import criarTabela from "./src/query/singup.js";
-import userRoutes from "./src/routes/userRoutes.js";
+import singup from "./src/query/singup.js";
+import authRoute from "./src/routes/userRoutes.js";
+import userRoutes from "./src/routes/authRoutes.js"
+import cors from "cors";
 
 async function inicializar() {
-    connection();
-    criarTabela;
+    await connection();
+    await singup.criarTabela();
 };
 
 inicializar();  
 
-const port = 3000;
+const port = 3001;
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
-app.use("/user", userRoutes);
+app.use("/", authRoute);
+app.use("/", userRoutes);
 
 app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
